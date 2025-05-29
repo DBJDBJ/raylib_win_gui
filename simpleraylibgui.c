@@ -1,3 +1,18 @@
+#ifdef _MSC_VER
+// Define these BEFORE including raylib to prevent Windows API conflicts
+#define WIN32_LEAN_AND_MEAN
+#define NOUSER          // Excludes USER32 API including CloseWindow
+
+#pragma comment(lib, "raylib/lib/raylibdll.lib")
+#pragma comment(lib, "winmm.lib")      // For timeBeginPeriod/timeEndPeriod
+#pragma comment(lib, "gdi32.lib")
+//#pragma comment(lib, "opengl32.lib")
+#pragma comment(lib, "shell32.lib")
+
+// Use console subsystem to keep main() instead of WinMain()
+#pragma comment(linker, "/SUBSYSTEM:CONSOLE")
+#endif
+
 #include "raylib.h"
 #include <stdio.h>
 #include <stdbool.h>
