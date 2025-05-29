@@ -9,8 +9,8 @@
 //#pragma comment(lib, "opengl32.lib")
 #pragma comment(lib, "shell32.lib")
 
-// Use console subsystem to keep main() instead of WinMain()
-#pragma comment(linker, "/SUBSYSTEM:CONSOLE")
+    // Use Windows subsystem for proper GUI app (no console window)
+#pragma comment(linker, "/SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
 #endif
 
 #include "raylib.h"
